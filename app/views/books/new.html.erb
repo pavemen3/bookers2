@@ -1,0 +1,17 @@
+<h1>本投稿フォーム</h1>
+
+<%= form_with model: @book, url: '/books', method: :post do |f| %>
+  <div class="field">
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :body, "Body" %>
+    <%= f.text_area :body %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Create Book' %>
+  </div>
+<% end %>

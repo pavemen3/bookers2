@@ -1,0 +1,18 @@
+<h2>User info</h2>
+<table class='table'>
+  <tr>
+    <img class="attachment user profile_image fallback" src="/assets/no_image-72379a4da21cb04a58337cf92d85bc39f8d534cbc78254c2085acaca82236bfa.jpg" />
+  </tr>
+  <tr>
+	  <th>name</th>
+	  <th><%= user.name %></th>
+  </tr>
+  <tr>
+	  <th>introduction</th>
+	  <th><%= user.introduction %></th>
+  </tr>
+</table>
+
+<div class='row'>
+  <%= link_to "", edit_user_path(user.id), class: "btn btn-outline-secondary btn-block fas fa-user-cog edit_user_#{user.id}" %>
+</div>
