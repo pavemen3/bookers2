@@ -9,3 +9,15 @@ label {
     display: inline-block;
     margin-bottom: 0.5rem;
 }
+
+h3, .h3 {
+    font-size: 1.75rem;
+}
+
+#error_explanation {
+    color: red;
+}
+
+#notice {
+    color: green;
+}

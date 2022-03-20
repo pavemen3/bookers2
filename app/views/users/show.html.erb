@@ -1,41 +1,38 @@
-<main>
-  <p id="notice"></p>
-  <div class='container px-5 px-sm-0'>
-    <div class='row'>
-      <div class='col-md-3'>
-        <%= render 'user_info', user: @user %>
-        <%= render 'books/new_book', book: @book %>
-      </div>
-      <div class='col-md-8 offset-md-1'>
-        <h2>Books</h2>
-        <table class='table table-hover table-inverse'>
-          <thead>
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <div class='col-md-3'>
+      <%= render 'user_info', user: @user %>
+      <%= render 'books/new_book', book: @new_book %>
+    </div>
+    <div class='col-md-8 offset-md-1'>
+      <h2>Books</h2>
+      <table class='table table-hover table-inverse'>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Opinion</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @books.each do |book| %>
             <tr>
-              <th></th>
-              <th>Title</th>
-              <th>Opinion</th>
-              <th colspan="3"></th>
+              <td>
+                <%= link_to user_path(book.user_id) do %>
+                  <%= image_tag @user.get_profile_image(40, 40), class: "attachment user profile_image fallback" %>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to book.title, book_path(book.id), class: "book_#{book.id}" %>
+              </td>
+              <td>
+                <%= book.body %>
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            <% @books.each do |book| %>
-              <tr>
-                <td>
-                  <%= link_to user_path(book.user_id) do %>
-                    <%= image_tag @user.get_profile_image(100,100), class: "attachment user profile_image fallback" %>
-                  <% end %>
-                </td>
-                <td>
-                  <%= link_to book.title, book_path(book.id), class: "book_#{book.id}" %>
-                </td>
-                <td>
-                  <%= book.body %>
-                </td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
-</main>
+</div>
