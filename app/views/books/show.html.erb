@@ -11,11 +11,11 @@
     		<table class='table'>
     		  <tr>
             <td>
-              <%= link_to "img", user_path(@book.user_id), class: "attachment user profile_image fallback" %>
+              <%= link_to user_path(@book.user_id) do %>
+                <%= image_tag @user.get_profile_image(100,100), class: "attachment user profile_image fallback" %>
+              <% end %>
               <br>
-                <!--<img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" />-->
-                <%= @user.name %>
-              </a>
+              <%= @user.name %>
             </td>
             <td>
               <%= link_to @book.title, book_path(@book.id) %>

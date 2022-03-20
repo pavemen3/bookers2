@@ -1,2 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+div.field, div.actions {
+    margin-bottom: 10px;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}

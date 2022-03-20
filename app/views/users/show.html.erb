@@ -21,7 +21,9 @@
             <% @books.each do |book| %>
               <tr>
                 <td>
-                  <%= link_to "img", user_path(book.user_id) %>
+                  <%= link_to user_path(book.user_id) do %>
+                    <%= image_tag @user.get_profile_image(100,100), class: "attachment user profile_image fallback" %>
+                  <% end %>
                 </td>
                 <td>
                   <%= link_to book.title, book_path(book.id), class: "book_#{book.id}" %>
