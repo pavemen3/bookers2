@@ -29,7 +29,7 @@
             <tr>
               <td>
                 <%= link_to user_path(book.user_id) do %>
-                  <%= image_tag @user.get_profile_image(40, 40), class: "attachment user profile_image fallback" %>
+                  <%= image_tag User.find(book.user_id).get_profile_image(40, 40), class: "attachment user profile_image fallback" %>
                 <% end %>
               </td>
               <td><%= link_to book.title, book_path(book.id), class: "book_#{book.id}" %></td>
